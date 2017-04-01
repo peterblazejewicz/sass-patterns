@@ -1,0 +1,34 @@
+{
+  "name": "sass-patterns",
+  "version": "1.0.0",
+  "description": "A different approach to SASS project compared to: https://sass-guidelin.es. Based on: https://egghead.io/courses/learn-the-best-and-most-useful-scss by Ari Picker: https://github.com/Pickra.",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm-run-all build serve",
+    "dev": "npm-run-all --parallel build:watch serve",
+    "serve": "browser-sync start --config bs-config.js",
+    "build": "node-sass --output-style expanded --source-map true scss/main.scss css/main.css",
+    "build:watch": "node-sass --output-style expanded --source-map true --watch scss/main.scss css/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peterblazejewicz/sass-patterns.git"
+  },
+  "keywords": [
+    "sass",
+    "css",
+    "patterns"
+  ],
+  "author": "Peter Blazejewicz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/peterblazejewicz/sass-patterns/issues"
+  },
+  "homepage": "https://github.com/peterblazejewicz/sass-patterns#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "node-sass": "^4.5.2",
+    "npm-run-all": "^4.0.2"
+  }
+}
