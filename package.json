@@ -6,8 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm-run-all build serve",
-    "dev": "npm-run-all --parallel build:watch serve",
-    "serve": "browser-sync start --config bs-config.js",
+    "dev": "npm-run-all --parallel build:watch serve:watch",
+    "serve": "browser-sync start --server .",
+    "serve:watch": "browser-sync start --server . --files=index.html,css/*.css",
     "build": "node-sass --output-style expanded --source-map true scss/main.scss css/main.css",
     "build:watch": "node-sass --output-style expanded --source-map true --watch scss/main.scss css/main.css"
   },
@@ -29,6 +30,7 @@
   "devDependencies": {
     "browser-sync": "^2.18.8",
     "node-sass": "^4.5.2",
-    "npm-run-all": "^4.0.2"
+    "npm-run-all": "^4.0.2",
+    "sass-lint": "^1.10.2"
   }
 }
