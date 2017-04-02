@@ -21,33 +21,24 @@ npm run dev
 `Yarn` client package tool is supported instead of `NPM`
 
 ```bash
-npm start
+npm run dev
 
-> sass-patterns@1.0.0 start /Users/piotrblazejewicz/git/sass-patterns
-> npm-run-all build serve
+> sass-patterns@1.0.0 dev /Users/piotrblazejewicz/git/sass-patterns
+> npm-run-all --parallel build:watch serve:watch postcss:watch
 
 
-> sass-patterns@1.0.0 build /Users/piotrblazejewicz/git/sass-patterns
-> node-sass --output-style expanded --source-map true scss/ --output css/
+> sass-patterns@1.0.0 build:watch /Users/piotrblazejewicz/git/sass-patterns
+> node-sass --output-style expanded --source-map true --watch scss/ --recursive --output css/
 
-Rendering Complete, saving .css file...
-Wrote CSS to /Users/piotrblazejewicz/git/sass-patterns/css/bootstrap-grid.css
-Wrote Source Map to /Users/piotrblazejewicz/git/sass-patterns/css/bootstrap-grid.css.map
-Rendering Complete, saving .css file...
-Wrote Source Map to /Users/piotrblazejewicz/git/sass-patterns/css/bootstrap-reboot.css.map
-Wrote CSS to /Users/piotrblazejewicz/git/sass-patterns/css/bootstrap-reboot.css
-Rendering Complete, saving .css file...
-Wrote Source Map to /Users/piotrblazejewicz/git/sass-patterns/css/bootstrap.css.map
-Wrote CSS to /Users/piotrblazejewicz/git/sass-patterns/css/bootstrap.css
-Rendering Complete, saving .css file...
-Wrote Source Map to /Users/piotrblazejewicz/git/sass-patterns/css/starter-template.css.map
-Wrote CSS to /Users/piotrblazejewicz/git/sass-patterns/css/starter-template.css
-Wrote 4 CSS files to /Users/piotrblazejewicz/git/sass-patterns/css/
 
-> sass-patterns@1.0.0 serve /Users/piotrblazejewicz/git/sass-patterns
-> browser-sync start --server .
+> sass-patterns@1.0.0 serve:watch /Users/piotrblazejewicz/git/sass-patterns
+> browser-sync start --server . --files=index.html,dist/css/*.css
 
-[BS] Access URLs:
+
+> sass-patterns@1.0.0 postcss:watch /Users/piotrblazejewicz/git/sass-patterns
+> postcss --use autoprefixer --config postcss.config.js --dir dist/css/ --watch css/*css
+
+⠋ Processing css/starter-template.css[BS] Access URLs:
  -------------------------------------
        Local: http://localhost:3000
     External: http://192.168.1.16:3000
@@ -56,6 +47,15 @@ Wrote 4 CSS files to /Users/piotrblazejewicz/git/sass-patterns/css/
  UI External: http://192.168.1.16:3001
  -------------------------------------
 [BS] Serving files from: .
+[BS] Watching files...
+⠙ Processing css/starter-template.css[BS] File event [change] : dist/css/starter-template.css
+✔ Finished css/starter-template.css (296ms)
+✔ Finished css/bootstrap-reboot.css (163ms)
+✔ Finished css/bootstrap.css (920ms)
+✔ Finished css/bootstrap-grid.css (107ms)
+[BS] File event [change] : dist/css/starter-template.css
+Waiting for file changes...
+
 ```
 
 ## Author

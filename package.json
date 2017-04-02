@@ -7,11 +7,13 @@
     "clean": "rimraf css/**/*.*",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm-run-all build serve",
-    "dev": "npm-run-all --parallel build:watch serve:watch",
+    "dev": "npm-run-all --parallel build:watch serve:watch postcss:watch",
     "serve": "browser-sync start --server .",
-    "serve:watch": "browser-sync start --server . --files=index.html,css/*.css",
+    "serve:watch": "browser-sync start --server . --files=index.html,dist/css/*.css",
     "build": "node-sass --output-style expanded --source-map true scss/ --output css/",
-    "build:watch": "node-sass --output-style expanded --source-map true --watch scss/ --recursive --output css/"
+    "build:watch": "node-sass --output-style expanded --source-map true --watch scss/ --recursive --output css/",
+    "postcss": "postcss --use autoprefixer --config postcss.config.js --dir build/ css/*css",
+    "postcss:watch": "postcss --use autoprefixer --config postcss.config.js --dir dist/css/ --watch css/*css"
   },
   "repository": {
     "type": "git",
@@ -29,9 +31,11 @@
   },
   "homepage": "https://github.com/peterblazejewicz/sass-patterns#readme",
   "devDependencies": {
+    "autoprefixer": "^6.7.7",
     "browser-sync": "^2.18.8",
     "node-sass": "^4.5.2",
     "npm-run-all": "^4.0.2",
+    "postcss-cli": "^3.0.0",
     "rimraf": "^2.6.1",
     "sass-lint": "^1.10.2"
   }
