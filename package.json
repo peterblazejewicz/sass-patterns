@@ -10,7 +10,7 @@
     "serve": "browser-sync start --server .",
     "serve:watch": "browser-sync start --server . --files=index.html,css/*.css",
     "build": "node-sass --output-style expanded --source-map true scss/ --output css/",
-    "build:watch": "node-sass --output-style expanded --source-map true --watch scss/ --output css/"
+    "build:watch": "node-sass --output-style expanded --source-map true --watch scss/ --recursive --output css/"
   },
   "repository": {
     "type": "git",
