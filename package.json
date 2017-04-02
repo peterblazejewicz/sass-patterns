@@ -38,5 +38,8 @@
     "postcss-cli": "^3.0.0",
     "rimraf": "^2.6.1",
     "sass-lint": "^1.10.2"
+  },
+  "dependencies": {
+    "bootstrap": "4.0.0-alpha.6"
   }
 }
