@@ -20,7 +20,7 @@
     "build:watch": "node-sass --output-style expanded --source-map true --watch scss/ --recursive --output css/",
     "postcss": "postcss --use autoprefixer --config postcss.config.js --dir dist/css/ css/*css",
     "postcss:watch": "postcss --use autoprefixer --config postcss.config.js --dir dist/css/ --watch css/*css",
-    "sass-lint": "sass-lint"
+    "sass-lint": "sass-lint -c scss/.sass-lint.yml -v -q"
   },
   "repository": {
     "type": "git",
@@ -49,6 +49,5 @@
   },
   "dependencies": {
     "bootstrap": "4.0.0-alpha.6"
-  },
-  "sasslintConfig": "scss/.sass-lint.yml"
+  }
 }

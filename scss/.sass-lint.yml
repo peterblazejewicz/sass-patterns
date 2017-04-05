@@ -20,8 +20,9 @@
 
 files:
   include:
-    - '**/*.scss'
-    - docs/assets/scss/**/*.scss
+    - 'scss/*.scss'
+  ignore:
+    - 'node_modules/**/*.scss'
 options:
   formatter: stylish
   merge-default-rules: false
